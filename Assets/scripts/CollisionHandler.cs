@@ -8,30 +8,60 @@ public class CollisionHandler : MonoBehaviour
 {
     const string FRIENDLY = "friendly";
     const string FINISH = "finish";
+    [SerializeField] float loadDelay = 2f;
+    // Movement movement;
+    [SerializeField] AudioClip success;
+    [SerializeField] AudioClip crash;
+    AudioSource audioSource;
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticles;
 
+    bool isControllable = true;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
 
     private void OnCollisionEnter(Collision collision)
-
-
     {
-
+        if (!isControllable) return;
         switch (collision.gameObject.tag)
         {
             case FRIENDLY:
 
                 break;
             case FINISH:
-                Debug.Log("TOUCHED");
-                LoadNextScene();
+                StartSuccessSequence();
                 break;
 
             default:
-                ReloadScene();
+                StartCrashMethodSequence();
                 break;
         }
         //if (!new[] { FINISH, FRIENDLY }.Contains(collision.gameObject.tag))  SceneManager.LoadScene(currentScene);
         //if (!collision.gameObject.CompareTag(FINISH) && !collision.gameObject.CompareTag(FRIENDLY)) reloadScene();
+    }
+    private void StartCrashMethodSequence()
+    {
+        isControllable = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(crash);
+        crashParticles.Play();
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadScene", loadDelay);
+    }
+
+    private void StartSuccessSequence()
+    {
+        isControllable = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(success);
+        successParticles.Play();
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextScene", loadDelay);
     }
 
 
