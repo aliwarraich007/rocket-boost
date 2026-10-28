@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
@@ -15,8 +16,8 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem crashParticles;
-
     bool isControllable = true;
+    bool isCollidable = true;
 
 
     private void Start()
@@ -24,10 +25,29 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            LoadNextScene();
+        }
+        else if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            isCollidable = !isCollidable;
+        }
+        // 1. isPressed -> used for continouse actions returns true on every frame that the key is held. in Update it was toggling the value of isCollidable from true to false.
+        // 2. wasPressedThisFrame -> used for 1 time actions. Returns true for only the frame in which key transitions from released to pressed. 
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isControllable) return;
+        if (!isControllable || !isCollidable) return;
         switch (collision.gameObject.tag)
         {
             case FRIENDLY:
