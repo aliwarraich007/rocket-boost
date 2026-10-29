@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: 33bc3880cd97be34ab3c482af7bb304e
 ModelImporter:
-  serializedVersion: 24501
+  serializedVersion: 24600
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Colour_Palette_Sci_Fi
-    second: {fileID: -6141262742250102974, guid: aa840126f37030e459305ecd09c6f48f, type: 3}
+    second: {fileID: 2100000, guid: 1ad4e47271285f4498c0af5fdac4e638, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -49,6 +49,8 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
