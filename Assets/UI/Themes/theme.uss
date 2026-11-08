@@ -1,0 +1,27 @@
+:root {
+   
+    --color-primary: rgb(0, 200, 255);          /* electric cyan */
+    --color-primary-dark: rgb(0, 140, 200);     /* pressed state */
+    --color-secondary: rgb(140, 100, 255);      /* nebula violet */
+
+ 
+    --color-text: rgb(255, 255, 255);
+    --color-text-on-primary: rgb(8, 14, 36);    /* dark text on bright hover fill */
+    --color-text-muted: rgb(150, 170, 210);
+
+    /* surfaces */
+    --color-bg: rgb(8, 14, 36);                 /* deep space navy */
+    --color-surface: rgba(20, 35, 80, 0.6);     /* translucent panels */
+    --color-border-soft: rgba(0, 200, 255, 0.35);
+
+    /* sizing / motion */
+    --text-base: 70px;
+    --radius-button: 50px;
+    --border-width: 6px;
+    --anim-time: 0.2s;
+    --menu-btn-width: 420px;
+    --menu-btn-height: 90px;
+    --menu-text-size: 36px;
+    --menu-btn-radius: 45px;
+    --menu-border-width: 4px;
+}

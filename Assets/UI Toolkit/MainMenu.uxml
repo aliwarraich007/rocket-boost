@@ -1,0 +1,21 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Style src="/Assets/UI Toolkit/MainMenu.uss" />   
+<ui:VisualElement name="main-container" class="screen">
+
+        <ui:VisualElement name="menu-column" class="menu-column">
+            <ui:Label name="title" text="ROCKET BOOST" class="title" />
+
+            <ui:VisualElement class="button-group">
+                <ui:Button name="launch-btn"   text="LAUNCH"   class="btn btn-primary" />
+                <ui:Button name="hangar-btn"   text="Levels"   class="btn" />
+                <!-- <ui:Button name="missions-btn" text="MISSIONS" class="btn" /> -->
+                <ui:Button name="settings-btn" text="SETTINGS" class="btn" />
+                <ui:Button name="quit-btn"     text="QUIT"     class="btn btn-quiet" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- <ui:Label name="best-score" text="BEST ALTITUDE: 0 m" class="best-score" /> -->
+        <ui:Label name="version" text="v0.1" class="version" />
+
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,102 @@
+.screen {
+    flex-grow: 1;
+    flex-direction: row;
+    background-image: url("/Assets/UI/Sprites/nebula-blue.png");
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.menu-column {
+    width: 40%;
+    justify-content: center;
+    padding-left: 120px;
+}
+
+.title {
+    font-size: 96px;
+    -unity-font-style: bold;
+    color: var(--color-text);        
+    -unity-text-align: middle-left;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 26px;
+    color: var(--color-primary);
+    letter-spacing: 10px;
+    -unity-text-align: middle-left;
+    margin-bottom: 60px;
+}
+
+.button-group {
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+.btn {
+    width: var(--menu-btn-width);
+    height: var(--menu-btn-height);
+    margin: 0 0 18px 0;
+    padding: 0 0 0 40px;
+
+    font-size: var(--menu-text-size);
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    color: var(--color-text);
+
+    background-color: rgba(0, 200, 255, 0);
+    border-width: var(--menu-border-width);
+    border-color: var(--color-border-soft);
+    border-radius: var(--menu-btn-radius);
+
+    transition-property: background-color, color, border-color, translate;
+    transition-duration: var(--anim-time);
+    transition-timing-function: ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    translate: 16px 0;       
+}
+
+.btn:active {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-text);
+    border-color: var(--color-text);
+}
+
+
+.btn-quiet {
+    color: var(--color-text-muted);
+    border-color: rgba(150, 170, 210, 0.25);
+}
+
+.best-score {
+    position: absolute;
+    left: 120px;
+    bottom: 40px;
+    font-size: 24px;
+    color: var(--color-text-muted);
+    letter-spacing: 3px;
+}
+
+.version {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: 20px;
+    color: var(--color-text-muted);
+}
