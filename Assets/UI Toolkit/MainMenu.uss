@@ -105,3 +105,45 @@
     font-size: 20px;
     color: var(--color-text-muted);
 }
+
+
+
+.hidden { display: none; }
+
+.settings-overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background-color: rgba(4, 8, 24, 0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-card {
+    width: 700px;
+    padding: 40px 50px;
+    background-color: var(--color-surface);
+    border-width: 2px;
+    border-color: var(--color-border-soft);
+    border-radius: 30px;
+}
+
+.settings-title {
+    font-size: 56px;
+    -unity-font-style: bold;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.settings-section {
+    font-size: 22px;
+    letter-spacing: 6px;
+    color: var(--color-primary);
+    margin: 20px 0 8px 0;
+}
+
+.setting-row { margin: 6px 0; }
+.setting-row > .unity-base-field__label,
+.setting-row .unity-label { color: var(--color-text); font-size: 24px; min-width: 200px; }
+
+.setting-row .unity-base-slider__dragger { background-color: var(--color-primary); }
+.setting-row .unity-base-slider__tracker { background-color: rgba(150, 170, 210, 0.3); }

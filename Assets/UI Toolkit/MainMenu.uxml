@@ -15,6 +15,27 @@
         </ui:VisualElement>
 
         <!-- <ui:Label name="best-score" text="BEST ALTITUDE: 0 m" class="best-score" /> -->
+
+
+       <ui:VisualElement name="settings-panel" class="settings-overlay hidden">
+            <ui:VisualElement class="settings-card">
+                <ui:Label text="SETTINGS" class="settings-title" />
+
+                <ui:Label text="AUDIO" class="settings-section" />
+                <ui:Slider name="master-slider" label="Master" low-value="0" high-value="1" class="setting-row" />
+                <ui:Slider name="music-slider"  label="Music"  low-value="0" high-value="1" class="setting-row" />
+                <ui:Slider name="sfx-slider"    label="SFX"    low-value="0" high-value="1" class="setting-row" />
+
+                 <ui:Label text="GRAPHICS" class="settings-section" />
+                 <ui:DropdownField name="quality-dropdown"    label="Quality"    class="setting-row" />
+                 <ui:DropdownField name="resolution-dropdown" label="Resolution" class="setting-row" />
+                 <ui:Toggle name="fullscreen-toggle" label="Fullscreen" class="setting-row" />
+                 <ui:Toggle name="vsync-toggle"      label="VSync"      class="setting-row" />
+
+                <ui:Button name="settings-back-btn" text="BACK" class="btn btn-primary" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
         <ui:Label name="version" text="v0.1" class="version" />
 
     </ui:VisualElement>
